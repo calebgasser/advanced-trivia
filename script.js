@@ -36,6 +36,7 @@
 		buildQuestionHTML: function(){
 			//Add answers
 			$("#question").html(this.currentQuestion.question);
+			$("#answers").empty();
 			for(choice in this.currentQuestion.answers){
 				var ele = $("<a>");
 				ele.href = "#";
@@ -43,6 +44,10 @@
 				ele.html(this.currentQuestion.answers[choice]);
 				$("#answers").append(ele);
 			}
+			$(".list-group-item").on('click', function(){
+				console.log("CLICK");
+				questionHandler.getNewQuestion();
+			});
 		},
 		populateQuestions: function(data){
 			for(quest in data.results){
@@ -57,10 +62,7 @@
 	}
 	//jQuery stuff goes here.
 	$(function(){
-		$(".list-group-item").on('click', function(){
-			console.log("CLICK");
-			questionHandler.getNewQuestion();
-		});
+		
 		$.ajax({
 			url: 'https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple',
 			dataType: 'json',
@@ -70,3 +72,5 @@
 		});
 	})
 }())
+
+jqueryUrl = jqueryUrl.concat($(this).val());
