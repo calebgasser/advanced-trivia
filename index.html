@@ -10,7 +10,7 @@
 			<!-- Twitter Bootstrap-->
 			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 			<!-- Google Fonts-->
-			<!-- <link href="https://fonts.googleapis.com/css?family=Miss+Fajardose|Quicksand|Ruthie|Pacifico" rel="stylesheet"> -->
+			<link href="https://fonts.googleapis.com/css?family=Nunito+Sans|VT323" rel="stylesheet">
 			<!-- Animate CSS -->
 			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 			<!-- Font Awesome-->
@@ -32,16 +32,38 @@
 <body>
 	<div class="container">
 		<div class="row">
+			<button id="start" class="btn btn-primary col-12">Start Game</button>
+		</div>
+		<div class="row text-center">
+			<div class="col-md-4">
+				<h3 id="correct">Correct:---</h3>
+			</div>
+			<div class="col-md-4">
+				<h1>Trivia Quest</h1>
+			</div>
+			<div class="col-md-4">
+				<h3 id="incorrect" >Incorrect:---</h3>
+			</div>
+		</div>
+		<div class="row">
 			<div class="offset-md-4 col-md-4">
 				<div class="card card-default">
-					<div class="card-header text-center">Trivia</div>
-					<div id="question" class="card-title text-center">Question Here</div>
+					<div id="timer" class="card-header text-center">Timer:---</div>
+					<div id="question" class="card-title text-center">Answer as many questions correctly as you can in 15 seconds.</div>
 					<div class="card-block">
 						<div id="answers" class="list-group">
 							
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="row">
+			<button id="start" type="button" class="btn btn-secondary col-12" data-toggle="collapse" data-target="#answered">Show Previous Questions</button>
+		</div>
+		<div class="row">
+			<div id="answered" class="collapse pre-scrollable col-12">
+			
 			</div>
 		</div>
 	</div>
